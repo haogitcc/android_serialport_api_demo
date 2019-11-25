@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/displayView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".ReaderActivity">
+
+    <include layout="@layout/connect_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="false"
+        android:scrollbars="none">
+    <LinearLayout
+        android:id="@+id/reader_settings"
+        android:visibility="gone"
+        android:isScrollContainer="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/antenna_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="antenna"/>
+
+            <CheckBox
+                android:id="@+id/power_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="power"/>
+
+            <CheckBox
+                android:id="@+id/gen2_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="gen2"/>
+
+            <CheckBox
+                android:id="@+id/read_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="read"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/antenna_layout" android:visibility="gone"/>
+
+        <include layout="@layout/power_layout" android:visibility="gone"/>
+
+        <include layout="@layout/gen2_layout" android:visibility="gone"/>
+
+        <include layout="@layout/activity_read" android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/search_result_view"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left|bottom"
+                android:layout_weight="0.5"
+                android:text="Search_Result"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/totalTagCount_view"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left|bottom"
+                android:layout_weight="0.5"
+                android:text="totalTagCount"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <include layout="@layout/tag_result_view"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
