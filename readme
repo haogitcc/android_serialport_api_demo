@@ -1,1 +1,4 @@
-谷歌android serialport api
+谷歌android_serialport_api
+mercuryapi_1.31.3.36
+
+整合串口库到mercuryapi，方便后续release带串口库版本API
